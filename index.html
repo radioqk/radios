@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "main": "./script.js"
+      }
+    }
+    </script>
+</head>
+<body>
+    <div id="radio-container">
+        <header>
+            <h1>Radio FM</h1>
+            <div id="now-playing">
+                <span id="player-status">Selecciona una emisora</span>
+                <span id="station-name"></span>
+            </div>
+        </header>
+
+        <div id="station-nav">
+            <button id="prev-station" class="nav-btn">←</button>
+            <button id="next-station" class="nav-btn">→</button>
+        </div>
+
+        <nav id="category-selector">
+            <button class="category-btn active" data-category="noticias">ONDA 1</button>
+            <button class="category-btn" data-category="musica">ONDA 2</button>
+            <button class="category-btn" data-category="generales">ONDA 3</button>
+            <button class="category-btn" data-category="libre">ONDA 4</button>
+            <button class="category-btn" data-category="onda5">ONDA 5</button>
+        </nav>
+
+        <main id="station-grid"></main>
+
+        <audio id="audio-player" preload="none"></audio>
+    </div>
+
+    <script type="module">
+        import 'main';
+    </script>
+</body>
+</html>
