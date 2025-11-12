@@ -44,7 +44,7 @@ const stations = {
         { name: "Radio Kolor (Cuenca 106.2FM)", url: "http://stream20.usastreams.com:8122/stream" },
         { name: "Emisora Comunitaria de Leganés", url: "https://cervera.eldialdigital.com:25191/stream" },
         { name: "Paradigma Radio (Córdoba 90.2FM)", url: "https://radio.andaina.net/8042/stream" },
-        { name: "", url: "" },
+        { name: "Radio Pimienta (Tenerife)", url: "https://cervera.eldialdigital.com:21182/stream" },
         { name: "", url: "" },
         { name: "", url: "" },
         { name: "", url: "" },
