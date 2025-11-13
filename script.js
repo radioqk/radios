@@ -3,7 +3,7 @@ const stations = {
         { name: "Radio Klara (València 104.4FM)", url: "https://cervera.eldialdigital.com:21111/stream" },
         { name: "Radio QK (Uviéu 107.2FM)", url: "https://icecast.radioqk.org:8443/radioqk_master.mp3" },
         { name: "Radio Vallekas (107.5FM)", url: "https://radio.radiobot.org/listen/rvk/rvk.mp3" },
-        { name: "Radio Kras (Xixón 105.0FM)", url: "http://giss.tv:8000/RadioKras.mp3" },
+        { name: "Radio Kras (Xixón 105.0FM)", url: "https://icecast.radioqk.org:8443/radiokras_master.mp3" },
         { name: "Color Comunitaria (Málaga 107.3FM)", url: "https://cervera.eldialdigital.com:21201/stream" },
         { name: "Cuac FM (A Coruña 103.4FM)", url: "https://streaming.cuacfm.org/cuacfm-128k.mp3" },
         { name: "Radio Guiniguada (Las Palmas de Gran Canaria 89.4FM)", url: "https://streamtotal.net/proxy/guiniguada/;" },
