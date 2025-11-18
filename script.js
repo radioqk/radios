@@ -42,10 +42,10 @@ const stations = {
     onda5: [
         { name: "Radio Jabato (Coslada-Madrid 103.8FM)", url: "http://giss.tv:8000/radiojabato.mp3" },
         { name: "Radio Kolor (Cuenca 106.2FM)", url: "http://stream20.usastreams.com:8122/stream" },
-        { name: "Emisora Comunitaria de Leganés", url: "https://cervera.eldialdigital.com:25191/stream" },
+        { name: "Rádio FilispiM (Ferrol 93.9FM)", url: "https://streaming.cuacfm.org/filispim.mp3" },
         { name: "Paradigma Radio (Córdoba 90.2FM)", url: "https://radio.andaina.net/8042/stream" },
         { name: "Radio Pimienta (Tenerife)", url: "https://cervera.eldialdigital.com:21182/stream" },
-        { name: "", url: "" },
+        { name: "Radio Roncudo (Bergantiños-Costa da Morte 106.1FM)", url: "https://stream-176.zeno.fm/fzbq43mvfq3tv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJmemJxNDNtdmZxM3R2IiwiaG9zdCI6InN0cmVhbS0xNzYuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6IjJ6amhwSkdsU1MtN1Q1Ynl3cDBXUnciLCJpYXQiOjE3NjM0NzA4MjYsImV4cCI6MTc2MzQ3MDg4Nn0.rmY4msWxlGPn6JUzRYkLJw4kFOYbQdDMw2pp0bnJAIs" },
         { name: "", url: "" },
         { name: "", url: "" },
     ],
