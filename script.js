@@ -40,7 +40,7 @@ const stations = {
         { name: "Radio Almaina (Granada 88.5 FM)", url: "https://radiobot.radioslibres.info/listen/radio_almaina/radio.mp3" },
     ],
     onda5: [
-        { name: "", url: "" },
+        { name: "Radio PRA (Nava, Asturies)", url: "http://pra.radiopra.com:8001/;stream.mp3" },
         { name: "Radio Kolor (Cuenca 106.2FM)", url: "http://stream20.usastreams.com:8122/stream" },
         { name: "Radio FilispiM (Ferrol 93.9FM)", url: "https://streaming.cuacfm.org/filispim.mp3" },
         { name: "Paradigma Radio (Córdoba 90.2FM)", url: "https://radio.andaina.net/8042/stream" },
