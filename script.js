@@ -25,7 +25,7 @@ const stations = {
         { name: "Radiópolis (Sevilla 92.3FM)", url: "https://radio.andaina.net/8038/stream" },
         { name: "RTVC  Ràdio Televisió Cardedeu (Barcelona 90.7FM)", url: "https://azuracast.rtvc.cat/radio/8000/radio.mp3" },
         { name: "Radio Oasis (Salamanca 105.9FM)", url: "https://cervera.eldialdigital.com:21141/stream" },
-        { name: "Radio Utopía (Madrid norte 107.8FM)", url: "http://streaming.radioutopia.es:8000/radio-utopia.mp3" },
+        { name: "", url: "" },
         { name: "Onda Latina (La Latina-Madrid 87.6FM)", url: "https://cervera.eldialdigital.com:21131/stream" },
         { name: "Irola Irratia (Bilbo 107.5FM)", url: "https://s.streampunk.cc/_stream/irola_irratia.mp3" },
     ],
