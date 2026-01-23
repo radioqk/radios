@@ -115,6 +115,7 @@ function preloadSounds() {
     soundsPreloaded = true;
 }
 
+let playbackHistory = [];
 let currentStationBtn = null;
 let hls = null;
 let metadataInterval = null;
@@ -153,7 +154,7 @@ function playNextStation() {
     const currentStation = currentStationBtn ? {
         name: currentStationBtn.dataset.name,
         url: currentStationBtn.dataset.url,
-        category: activeCategory
+        category: currentStationBtn.dataset.category
     } : null;
     
     let nextIndex = 0;
@@ -183,33 +184,9 @@ function playNextStation() {
 }
 
 function playPreviousStation() {
-    const activeCategory = document.querySelector('.category-btn.active').dataset.category;
-    const allStations = [];
+    if (playbackHistory.length === 0) return;
     
-    // Collect all stations from all categories
-    Object.keys(stations).forEach(category => {
-        stations[category].forEach(station => {
-            allStations.push({...station, category});
-        });
-    });
-    
-    // Shuffle array for random order
-    const shuffledStations = allStations.sort(() => Math.random() - 0.5);
-    
-    // Find current station index
-    const currentStation = currentStationBtn ? {
-        name: currentStationBtn.dataset.name
-    } : null;
-    
-    let prevIndex = shuffledStations.length - 1;
-    if (currentStation) {
-        const currentIndex = shuffledStations.findIndex(s => 
-            s.name === currentStation.name && s.url === currentStation.url
-        );
-        prevIndex = currentIndex === 0 ? shuffledStations.length - 1 : currentIndex - 1;
-    }
-    
-    const prevStation = shuffledStations[prevIndex];
+    const prevStation = playbackHistory.pop();
     
     // Switch to the category of the previous station
     document.querySelector('.category-btn.active').classList.remove('active');
@@ -222,7 +199,7 @@ function playPreviousStation() {
         const stationBtn = Array.from(document.querySelectorAll('.station-btn'))
             .find(btn => btn.dataset.name === prevStation.name);
         if (stationBtn) {
-            playStation(stationBtn);
+            playStation(stationBtn, false); // Don't add current to history when going back
         }
     }, 50);
 }
@@ -239,6 +216,7 @@ function renderStations(category) {
         button.textContent = station.name;
         button.dataset.url = station.url;
         button.dataset.name = station.name;
+        button.dataset.category = category;
         stationGrid.appendChild(button);
     });
 }
@@ -302,7 +280,7 @@ function stopRDSUpdates() {
     }
 }
 
-function playStation(button) {
+function playStation(button, addToHistory = true) {
     const url = button.dataset.url;
     const name = button.dataset.name;
     
@@ -324,6 +302,13 @@ function playStation(button) {
     playRandomDialSound();
 
     if (currentStationBtn) {
+        if (addToHistory && currentStationBtn !== button) {
+            playbackHistory.push({
+                name: currentStationBtn.dataset.name,
+                url: currentStationBtn.dataset.url,
+                category: currentStationBtn.dataset.category
+            });
+        }
         currentStationBtn.classList.remove('playing');
     }
 
