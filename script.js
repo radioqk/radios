@@ -301,6 +301,29 @@ function playStation(button, addToHistory = true) {
     // Play dial sound on station change
     playRandomDialSound();
 
+    // Increase station-change counter only when switching to a different station
+    if (!window.stationChangeCount) window.stationChangeCount = 0;
+    if (currentStationBtn && currentStationBtn !== button) {
+        window.stationChangeCount++;
+    } else if (!currentStationBtn) {
+        // first selection counts as a change
+        window.stationChangeCount++;
+    }
+
+    // If counter reaches 4 or more, trigger donation highlight
+    const donationLink = document.getElementById('donation-link');
+    if (window.stationChangeCount >= 4 && donationLink && !donationLink.classList.contains('donate-bounce')) {
+        donationLink.classList.add('donate-bounce');
+        const label = donationLink.querySelector('.donation-label');
+        if (label) label.style.opacity = '1';
+        // Remove effect after 3s and reset counter
+        setTimeout(() => {
+            donationLink.classList.remove('donate-bounce');
+            if (label) label.style.opacity = '';
+            window.stationChangeCount = 0;
+        }, 3000);
+    }
+
     if (currentStationBtn) {
         if (addToHistory && currentStationBtn !== button) {
             playbackHistory.push({
@@ -419,6 +442,15 @@ stationGrid.addEventListener('click', (e) => {
 // Load initial category
 document.addEventListener('DOMContentLoaded', () => {
     renderStations('noticias');
+
+    // Ensure donation label element exists (hidden by default)
+    const donationLink = document.getElementById('donation-link');
+    if (donationLink && !donationLink.querySelector('.donation-label')) {
+        const span = document.createElement('span');
+        span.className = 'donation-label';
+        span.textContent = 'donar un café';
+        donationLink.appendChild(span);
+    }
 
     // Media Session API for media key controls
     if ('mediaSession' in navigator) {
