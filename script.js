@@ -416,7 +416,7 @@ function playStation(button, addToHistory = true) {
 
         navigator.mediaSession.metadata = new MediaMetadata({
             title: name,
-            artist: 'Radio FM',
+            artist: 'Radios Libres',
             album: categoryName,
         });
     }
