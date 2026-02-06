@@ -1,55 +1,5 @@
-const stations = {
-    noticias: [
-        { name: "Radio Klara (València 104.4FM)", url: "https://cervera.eldialdigital.com:21111/stream" },
-        { name: "Radio QK (Uviéu 107.2FM)", url: "https://icecast.radioqk.org:8443/radioqk_master.mp3" },
-        { name: "Radio Vallekas (107.5FM)", url: "https://radio.radiobot.org/listen/rvk/rvk.mp3" },
-        { name: "Radio Kras (Xixón 105.0FM)", url: "https://giss.tv:666/RadioKras.mp3" },
-        { name: "Color Comunitaria (Málaga 107.3FM)", url: "https://cervera.eldialdigital.com:21201/stream" },
-        { name: "Cuac FM (A Coruña 103.4FM)", url: "https://streaming.cuacfm.org/cuacfm-128k.mp3" },
-        { name: "Radio Guiniguada (Las Palmas de Gran Canaria 89.4FM)", url: "https://streamtotal.net/proxy/guiniguada/;" },
-        { name: "Radio Espiritrompa (Alto Aragón 102.2FM)", url: "https://radiobot.radioslibres.info/listen/radio_espiritrompa/radio.mp3" },
-    ],
-    musica: [
-        { name: "Almenara Radio (Madrid 106.7FM)", url: "https://cervera.eldialdigital.com:25211/stream" },
-        { name: "Radio Argayo (Radio Libre en Cantabria)", url: "https://radiobot.radioslibres.info/radio/8030/radio.ogg?_=1" },
-        { name: "Radio La Granja (Zaragoza 102.1FM)", url: "https://radiobot.radioslibres.info/listen/radio_la_granja/rlg.mp3" },
-        { name: "Eco Leganés (Madrid)", url: "https://cervera.eldialdigital.com:25191/stream" },
-        { name: "Ovejas Negrax (Madrid)", url: "https://radio.radiobot.org/listen/ovejas/ovejasnegrax.mp3" },
-        { name: "OMC Onda Merlín Comunitaria (Villaverde-Madrid 107.3FM)", url: "https://radio.radiobot.org/listen/omc/directo.mp3" },
-        { name: "Radio Enlace (Hortaleza-Madrid 107.5FM)", url: "https://cervera.eldialdigital.com:25121/stream" },
-        { name: "Radio Iris 7 (Aranda de Duero 100.0FM)", url: "https://sonic.sistemahost.es/8244/stream" },
-    ],
-    generales: [
-        { name: "Siberia FM (Vitoria-Gasteiz 91.8FM)", url: "https://stream.euskonet.eus/siberia?1762901374198" },
-        { name: "Radio Xata (Pinto-Madrid)", url: "https://radio.radiobot.org/listen/xata/radio.mp3" },
-        { name: "Radiópolis (Sevilla 92.3FM)", url: "https://radio.andaina.net/8038/stream" },
-        { name: "RTVC  Ràdio Televisió Cardedeu (Barcelona 90.7FM)", url: "https://azuracast.rtvc.cat/radio/8000/radio.mp3" },
-        { name: "Radio Oasis (Salamanca 105.9FM)", url: "https://cervera.eldialdigital.com:21141/stream" },
-        { name: "Hala Bedi Irratia (Gasteiz 95.6FM)", url: "https://stream.halabedi.eus/hb2_64.mp3" },
-        { name: "Onda Latina (La Latina-Madrid 87.6FM)", url: "https://cervera.eldialdigital.com:21131/stream" },
-        { name: "Irola Irratia (Bilbo 107.5FM)", url: "https://s.streampunk.cc/_stream/irola_irratia.mp3" },
-    ],
-    libre: [
-        { name: "Eguzki Irratia (Iruñea 107.0FM eta Iruñerrian 91.0FM)", url: "https://streaming.eguzki.eus/eguzki.mp3" },
-        { name: "Radio Piratona (Vigo 106.1FM)", url: "https://zeppelin.streampunk.cc/_stream/radiopiratona.ogg" },
-        { name: "Radio Topo (Zaragoza 101.8FM)", url: "https://radiobot.radioslibres.info/listen/radio_topo/radio96.mp3" },
-        { name: "Radio Sintonía (Puente Genil-Córdoba 106.9FM)", url: "https://eu5.fastcast4u.com/proxy/sintoniapg?mp=/;" },
-        { name: "Ágora Sol Radio (Madrid)", url: "https://cervera.eldialdigital.com:23141/stream" },
-        { name: "Radio Roncudo (Bergantiños-Costa da Morte 106.1FM)", url: "https://stream-176.zeno.fm/fzbq43mvfq3tv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJmemJxNDNtdmZxM3R2IiwiaG9zdCI6InN0cmVhbS0xNzYuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6IjJ6amhwSkdsU1MtN1Q1Ynl3cDBXUnciLCJpYXQiOjE3NjM0NzA4MjYsImV4cCI6MTc2MzQ3MDg4Nn0.rmY4msWxlGPn6JUzRYkLJw4kFOYbQdDMw2pp0bnJAIs" },
-        { name: "Paradigma Radio (Córdoba 90.2FM)", url: "https://radio.andaina.net/8042/stream" },
-        { name: "Radio Almaina (Granada 88.5 FM)", url: "https://radiobot.radioslibres.info/listen/radio_almaina/radio.mp3" },
-    ],
-    onda5: [
-        { name: "Radio Kolor (Cuenca 106.2FM)", url: "http://stream20.usastreams.com:8122/stream" },
-        { name: "Onda Polígono (Toledo 107.3FM)", url: "https://icecast.ondapoligono.org/stream" },
-        { name: "Radio FilispiM (Ferrol 93.9FM)", url: "https://streaming.cuacfm.org/filispim.mp3" },
-        { name: "Radio Pimienta (Tenerife)", url: "https://cervera.eldialdigital.com:21182/stream" },
-        { name: "Electronic Music (Hirschmilch Radio)", url: "https://hirschmilch.de:7501/electronic.mp3?ts=1754176686" },
-        { name: "Alpha Boys School Radio (KInsgton, Jamaica)", url: "https://alphaboys-live.streamguys1.com/alphaboys.mp3" },
-        { name: "Klassik Radio (DE)", url: "https://klassikr.streamabc.net/klr-krdnational-mp3-192-8877033" },
-        { name: "Soul, Smooth, Jazz (Serenade Radio UK)", url: "https://rbx2.hnux.com/http://149.202.22.75:8284/;" },
-    ],
-};
+import { stations } from './stations.js';
+import { preloadSounds, playRandomDialSound } from './audioHelpers.js';
 
 const categorySelector = document.getElementById('category-selector');
 const stationGrid = document.getElementById('station-grid');
@@ -57,71 +7,11 @@ const audioPlayer = document.getElementById('audio-player');
 const playerStatusEl = document.getElementById('player-status');
 const stationNameEl = document.getElementById('station-name');
 
-let audioContext = null;
-const dialSounds = [
-    'dial_sound_1.mp3',
-    'dial_sound_2.mp3',
-    'dial_sound_3.mp3',
-    'dial_sound_4.mp3',
-    'dial_sound_5.mp3',
-    'dial_sound_6.mp3',
-    'dial_sound_7.mp3',
-    'dial_sound_8.mp3',
-    'dial_sound_9.mp3'
-];
-const soundBuffers = {};
-
-async function loadSound(url) {
-    if (!audioContext) {
-        try {
-            audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        } catch (e) {
-            console.error('Web Audio API is not supported in this browser');
-            return;
-        }
-    }
-    if (soundBuffers[url]) {
-        return soundBuffers[url];
-    }
-    try {
-        const response = await fetch(url);
-        const arrayBuffer = await response.arrayBuffer();
-        const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-        soundBuffers[url] = audioBuffer;
-        return audioBuffer;
-    } catch (error) {
-        console.error(`Error loading sound: ${url}`, error);
-    }
-}
-
-function playSound(buffer) {
-    if (!audioContext || !buffer) return;
-    const source = audioContext.createBufferSource();
-    source.buffer = buffer;
-    source.connect(audioContext.destination);
-    source.start(0);
-}
-
-async function playRandomDialSound() {
-    const randomSoundUrl = dialSounds[Math.floor(Math.random() * dialSounds.length)];
-    const buffer = await loadSound(randomSoundUrl);
-    playSound(buffer);
-}
-
-let soundsPreloaded = false;
-function preloadSounds() {
-    if (soundsPreloaded) return;
-    dialSounds.forEach(loadSound);
-    soundsPreloaded = true;
-}
-
 let playbackHistory = [];
 let currentStationBtn = null;
 let hls = null;
 let metadataInterval = null;
 let lastTrackInfo = '';
-let currentCategoryIndex = 0;
-let currentStationIndex = 0;
 const categories = ['noticias', 'musica', 'generales', 'libre', 'onda5'];
 
 function getNextCategory(currentCat) {
@@ -139,24 +29,17 @@ function getPreviousCategory(currentCat) {
 function playNextStation() {
     const activeCategory = document.querySelector('.category-btn.active').dataset.category;
     const allStations = [];
-    
-    // Collect all stations from all categories
     Object.keys(stations).forEach(category => {
         stations[category].forEach(station => {
             allStations.push({...station, category});
         });
     });
-    
-    // Shuffle array for random order
     const shuffledStations = allStations.sort(() => Math.random() - 0.5);
-    
-    // Find current station index
     const currentStation = currentStationBtn ? {
         name: currentStationBtn.dataset.name,
         url: currentStationBtn.dataset.url,
         category: currentStationBtn.dataset.category
     } : null;
-    
     let nextIndex = 0;
     if (currentStation) {
         const currentIndex = shuffledStations.findIndex(s => 
@@ -164,16 +47,10 @@ function playNextStation() {
         );
         nextIndex = (currentIndex + 1) % shuffledStations.length;
     }
-    
     const nextStation = shuffledStations[nextIndex];
-    
-    // Switch to the category of the next station
     document.querySelector('.category-btn.active').classList.remove('active');
     document.querySelector(`[data-category="${nextStation.category}"]`).classList.add('active');
-    
     renderStations(nextStation.category);
-    
-    // Find and play the station
     setTimeout(() => {
         const stationBtn = Array.from(document.querySelectorAll('.station-btn'))
             .find(btn => btn.dataset.name === nextStation.name);
@@ -185,26 +62,19 @@ function playNextStation() {
 
 function playPreviousStation() {
     if (playbackHistory.length === 0) return;
-    
     const prevStation = playbackHistory.pop();
-    
-    // Switch to the category of the previous station
     document.querySelector('.category-btn.active').classList.remove('active');
     document.querySelector(`[data-category="${prevStation.category}"]`).classList.add('active');
-    
     renderStations(prevStation.category);
-    
-    // Find and play the station
     setTimeout(() => {
         const stationBtn = Array.from(document.querySelectorAll('.station-btn'))
             .find(btn => btn.dataset.name === prevStation.name);
         if (stationBtn) {
-            playStation(stationBtn, false); // Don't add current to history when going back
+            playStation(stationBtn, false);
         }
     }, 50);
 }
 
-// Add event listeners for navigation buttons
 document.getElementById('next-station').addEventListener('click', playNextStation);
 document.getElementById('prev-station').addEventListener('click', playPreviousStation);
 
@@ -223,15 +93,9 @@ function renderStations(category) {
 
 function updateRDSMetadata() {
     if (!audioPlayer.src || audioPlayer.paused) return;
-    
-    // Try to fetch metadata from various sources
     const url = audioPlayer.src;
-    
-    // For icecast/shoutcast streams
     if (url.includes('icecast') || url.includes('shoutcast') || url.includes('.mp3') || url.includes('.aac')) {
-        // Fetch metadata from icecast/shoutcast
         const metadataUrl = url.replace(/\/[^/]*$/, '/status-json.xsl');
-        
         fetch(metadataUrl)
             .then(response => response.json())
             .then(data => {
@@ -242,19 +106,13 @@ function updateRDSMetadata() {
                 }
             })
             .catch(() => {
-                // Fallback to basic metadata
                 updateTrackInfo('En directo');
             });
-    }
-    // For HLS streams
-    else if (url.includes('.m3u8')) {
-        // HLS metadata is limited, use station name
+    } else if (url.includes('.m3u8')) {
         const currentStation = stations[currentStationBtn.dataset.category]?.find(s => s.url === url);
         const trackInfo = currentStation?.description || 'En directo';
         updateTrackInfo(trackInfo);
-    }
-    else {
-        // Default fallback
+    } else {
         updateTrackInfo('En directo');
     }
 }
@@ -283,8 +141,6 @@ function stopRDSUpdates() {
 function playStation(button, addToHistory = true) {
     const url = button.dataset.url;
     const name = button.dataset.name;
-    
-    // If clicking the same station that is already playing, pause it.
     if (currentStationBtn === button && !audioPlayer.paused) {
         audioPlayer.pause();
         playerStatusEl.textContent = 'Selecciona una emisora';
@@ -298,25 +154,21 @@ function playStation(button, addToHistory = true) {
         return;
     }
 
-    // Play dial sound on station change
+    // play dial sound
     playRandomDialSound();
 
-    // Increase station-change counter only when switching to a different station
     if (!window.stationChangeCount) window.stationChangeCount = 0;
     if (currentStationBtn && currentStationBtn !== button) {
         window.stationChangeCount++;
     } else if (!currentStationBtn) {
-        // first selection counts as a change
         window.stationChangeCount++;
     }
 
-    // If counter reaches 4 or more, trigger donation highlight
     const donationLink = document.getElementById('donation-link');
     if (window.stationChangeCount >= 4 && donationLink && !donationLink.classList.contains('donate-bounce')) {
         donationLink.classList.add('donate-bounce');
         const label = donationLink.querySelector('.donation-label');
         if (label) label.style.opacity = '1';
-        // Remove effect after 3s and reset counter
         setTimeout(() => {
             donationLink.classList.remove('donate-bounce');
             if (label) label.style.opacity = '';
@@ -342,12 +194,10 @@ function playStation(button, addToHistory = true) {
 
     stopRDSUpdates();
 
-    // Reset metadata display
     playerStatusEl.textContent = "Conectando...";
     stationNameEl.textContent = name.toUpperCase();
     lastTrackInfo = '';
 
-    // Handle metadata updates
     audioPlayer.addEventListener('loadedmetadata', () => {
         playerStatusEl.textContent = "En directo";
         startRDSUpdates();
@@ -357,7 +207,6 @@ function playStation(button, addToHistory = true) {
         playerStatusEl.textContent = "Conectando...";
     });
 
-    // Handle track changes
     audioPlayer.addEventListener('play', () => {
         startRDSUpdates();
         if ('mediaSession' in navigator) {
@@ -388,7 +237,6 @@ function playStation(button, addToHistory = true) {
                  }
             });
         } else if (audioPlayer.canPlayType('application/vnd.apple.mpegurl')) {
-            // Native HLS support (e.g., Safari)
             audioPlayer.src = url;
             audioPlayer.play();
         } else {
@@ -409,7 +257,6 @@ function playStation(button, addToHistory = true) {
     button.classList.add('playing');
     currentStationBtn = button;
 
-    // Update Media Session API
     if ('mediaSession' in navigator) {
         const activeCategoryButton = document.querySelector('.category-btn.active');
         const categoryName = activeCategoryButton ? activeCategoryButton.textContent : 'Radio';
@@ -439,9 +286,7 @@ stationGrid.addEventListener('click', (e) => {
     }
 });
 
-// Load initial category
 document.addEventListener('DOMContentLoaded', () => {
-    // Fix mobile viewport height inconsistencies (Chrome address bar clipping)
     const setVh = () => {
         const vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -452,7 +297,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderStations('noticias');
 
-    // Ensure donation label element exists (hidden by default)
     const donationLink = document.getElementById('donation-link');
     if (donationLink && !donationLink.querySelector('.donation-label')) {
         const span = document.createElement('span');
@@ -461,22 +305,18 @@ document.addEventListener('DOMContentLoaded', () => {
         donationLink.appendChild(span);
     }
 
-    // Media Session API for media key controls
     if ('mediaSession' in navigator) {
         navigator.mediaSession.setActionHandler('previoustrack', () => {
             playPreviousStation();
         });
-
         navigator.mediaSession.setActionHandler('nexttrack', () => {
             playNextStation();
         });
-
         navigator.mediaSession.setActionHandler('play', () => {
             if (audioPlayer.paused && currentStationBtn) {
                 audioPlayer.play();
             }
         });
-
         navigator.mediaSession.setActionHandler('pause', () => {
             if (!audioPlayer.paused) {
                 audioPlayer.pause();
