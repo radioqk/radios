@@ -61,8 +61,6 @@ header h1 {
     margin-bottom: 0;
     text-shadow: 0 0 10px var(--accent-color);
     text-align: right;
-    justify-self: end; /* push the title toward the right within the header grid */
-    transform: translateX(6%); /* subtle extra nudge to the right on horizontal layouts */
 }
 
 #now-playing {
@@ -332,10 +330,8 @@ header h1 {
         font-size: clamp(1.1rem, 3.5vw, 1.5rem); /* Adjusted for mobile header title */
     }
     
-    /* move arrows slightly lower on short/vertical viewports so they don't get clipped;
-       added a percentage offset to account for ~10% cutoff on some devices */
     #station-nav {
-        top: calc(15px + 10%);
+        top: 15px; /* Also adjust for mobile viewports */
     }
 }
 
